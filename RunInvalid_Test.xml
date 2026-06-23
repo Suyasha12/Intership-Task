@@ -7,7 +7,7 @@
     <test name="Test">
 
         <classes>
-            <class name="SignUp_POM.Invalid_Input_Verification"/>
+            <class name="SignUp_TestCase.Invalid_Input_Verification"/>
         </classes>
     </test>
 </suite>

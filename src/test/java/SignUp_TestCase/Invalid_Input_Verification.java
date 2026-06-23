@@ -1,6 +1,8 @@
-package SignUp_POM;
+package SignUp_TestCase;
 
 import BaseClass.Baseclass;
+import SignUp_POM.Dashboard_PageModel;
+import SignUp_POM.SetupAccount_PageModel;
 import Utilities.UserData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
