@@ -29,7 +29,9 @@
 
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>RunTest.xml</suiteXmlFile>
+                            <suiteXmlFile>RunInvalid_Test.xml</suiteXmlFile>
+
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

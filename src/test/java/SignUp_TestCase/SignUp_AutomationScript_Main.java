@@ -43,7 +43,7 @@ public class SignUp_AutomationScript_Main extends Baseclass {
         step1.CheckUserDetailFormAssertion("Complete Your Agent Profile in Steps");
         step1.FillFirstName(UserData.firstname);
         step1.FilllastName(UserData.lastname);
-        step1.FillEmail(UserData.Newemail);
+        step1.EnterEmailandPassword(UserData.Newemail, UserData.password);
         System.out.println(UserData.Newemail);
         step1.ClickCountryDropdown();
         step1.SelectCountry("Nepal");
@@ -51,7 +51,6 @@ public class SignUp_AutomationScript_Main extends Baseclass {
         step1.FillPhoneNum(UserData.PhoneNum);
         System.out.println(UserData.PhoneNum);
         sleep(2000);
-        step1.FillPassword(UserData.password);
         step1.FillConfirmPassword(UserData.confirmpassword);
         step1.ClickNextButton();
 
@@ -134,8 +133,6 @@ public class SignUp_AutomationScript_Main extends Baseclass {
         AgencyDetail_PageModel step2 = new AgencyDetail_PageModel(driver);
         //step2.ClickonBackButton();
         step2.ClickonNextPageButton();
-
-
     }
 
 //Verification and Preferences Page 4.

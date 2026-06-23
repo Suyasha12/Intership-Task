@@ -16,16 +16,12 @@ public class OTP_PageModel {
     public OTP_PageModel(WebDriver driver){
         this.driver= driver;
     }
-    private By OTPPageAssertion = By.xpath("//h2[@class=\"text-lg lg:text-2xl font-bold tracking-[-0.56px] leading-[135%] pb-2\"](\"Email Verification code\")");
     private By OTPInput = By.xpath("//input[@autocomplete=\"one-time-code\"]");
     private By VerifyCodeButton= By.xpath("//button[@type=\"submit\"]");
     private By ResendCode=By.xpath("//span[@class=\"text-primary cursor-pointer\"]");
     private By SuccessMessage_PopUp= By.xpath("//li[@role=\"status\"]");
 
-    public void CheckOTPPageAssertion(String expected){
-        String actual = driver.findElement(OTPPageAssertion).getText();
-        Assert.assertEquals(actual,expected);
-    }
+
     public void EnterOTP(String OTPcode){
         driver.findElement(OTPInput).sendKeys(OTPcode);
     }

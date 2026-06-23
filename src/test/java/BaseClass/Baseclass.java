@@ -20,7 +20,7 @@ public class Baseclass {
 
     }
 
-    //@AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void CloseEveryBrowser(){
         if(driver !=null){
             driver.quit();

@@ -24,6 +24,9 @@ public class SetupAccount_PageModel {
     private By Password= By.xpath("//input[@name=\"password\"]");
     private By ConfirmPassword= By.xpath("//input[@name=\"confirmPassword\"]");
     private By NextButton=By.xpath("//button[@type=\"submit\"]");
+    private By InvalidEmailMesg= By.xpath("//p[contains(text(),'Invalid email address')]");
+    private By PasswordUnmatch= By.xpath("//div[contains(text(),'Passwords do not match')]");
+    private By EmptyPassword=By.xpath("(//div[text()='Password must be at least 8 characters'])[1]");
 
 
 
@@ -43,9 +46,6 @@ public class SetupAccount_PageModel {
     public void FilllastName(String lastname){
         driver.findElement(LastName).sendKeys(lastname);
     }
-    public void FillEmail(String email){
-        driver.findElement(Email).sendKeys(email);
-    }
     public void ClickCountryDropdown(){
         driver.findElement(CountryDropdown).click();
     }
@@ -59,15 +59,32 @@ public class SetupAccount_PageModel {
     public void FillPhoneNum(String number){
         driver.findElement(PhoneNum).sendKeys(number);
     }
-    public void FillPassword(String password){
-        driver.findElement(Password).sendKeys(password);
-    }
+
     public void FillConfirmPassword(String confirmpassword){
         driver.findElement(ConfirmPassword).sendKeys(confirmpassword);
     }
     public void ClickNextButton(){
         driver.findElement(NextButton).click();
     }
+    public void checkInvalidEmailMsg(String expectedMsg) {
+        String actualMsg = driver.findElement(InvalidEmailMesg).getText();
+        Assert.assertEquals(actualMsg, expectedMsg, "Invalid email message does not match");
+    }
+    public void checkPasswordUnmatch(String expectedMsg) {
+        String actualMsg = driver.findElement(PasswordUnmatch).getText();
+        Assert.assertEquals(actualMsg, expectedMsg, "Password mismatch message does not match");
+    }
+
+    public void checkEmptyPassword(String expectedMsg) {
+        String actualMsg = driver.findElement(EmptyPassword).getText();
+        Assert.assertEquals(actualMsg, expectedMsg, "Empty password message does not match");
+    }
+
+    public void EnterEmailandPassword(String email, String password){
+        driver.findElement(Email).sendKeys(email);
+        driver.findElement(Password).sendKeys(password);
+    }
+
 
 
 }

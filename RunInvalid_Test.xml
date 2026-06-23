@@ -7,9 +7,7 @@
     <test name="Test">
 
         <classes>
-
-            <class name="SignUp_TestCase.SignUp_AutomationScript_Main"/>
-
+            <class name="SignUp_POM.Invalid_Input_Verification"/>
         </classes>
     </test>
 </suite>
